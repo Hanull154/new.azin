@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="main.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Azin Talk</title>
+
+<link rel="stylesheet" href="main.css" />
+<link rel="stylesheet" href="styles.css" />
+
+<style>
+
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    cursor: pointer;
+    padding: 10px;
+    transition: all 0.3s ease;
+    color: #333;
+  }
+
+
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    padding: 8px 12px;
+  }
+
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+      font-size: 1.8em;
+      margin-right: 10px;
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      position: relative;
+    }
+
+
+    nav ul {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background-color: purple; 
+      position: absolute;
+      top: 60px;
+      left: 0;
+      padding: 10px 0;
+      z-index: 999;
+    }
+
+    nav ul.show {
+      display: flex;
+      animation: slideDown 0.3s ease-in-out;
+    }
+  }
+
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+  .header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+  }
+
+
+  main p {
+    font-size: 1.2em;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-container">
+    <h1 style="margin: 0;">Azin Talk</h1>
+
+    <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
+  </div>
+  <nav>
+    <ul>
+      <li><a style="color: white;" href="index.html">Home</a></li>
+      <li><a style="color: white;" href="about.html">About</a></li>
+      <li><a style="color: white;" href="login.page.html">Login</a></li>
+      <li><a style="color: white;" href="loc.html">Location</a></li>
+      <li><a style="color: white;" href="teacher.html">Teachers</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section id="home">
+    <div class="container">
+      <h2>Welcome to Azin Talk</h2>
+      <p style="text-align: center; max-width: 800px; margin: 0 auto;">
+        Azin Talk is a dynamic platform designed to facilitate meaningful conversations,
+        share valuable insights, and connect people worldwide. Join us to explore new ideas,
+        engage with a vibrant community, and stay updated with the latest trends.
+      </p>
+    </div>
+  </section>
+  
+  <section id="about">
+    <div class="container">
+      <h2>About Azin Talk</h2>
+      <div class="details">
+        <div class="card">
+          <h3>Our Mission</h3>
+          <p>To create a welcoming environment for open discussions and knowledge sharing that empower individuals and communities.</p>
+        </div>
+        <div class="card">
+          <h3>Our Vision</h3>
+          <p>Building a global platform where diverse voices come together to exchange ideas and inspire change.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="container">
+      <h2>Features</h2>
+      <div class="details">
+        <div class="card">
+          <h3>Real-Time Chat</h3>
+          <p>Engage with others instantly through our seamless live chat feature.</p>
+        </div>
+        <div class="card">
+          <h3>Community Groups</h3>
+          <p>Join or create groups based on your interests to connect with like-minded individuals.</p>
+        </div>
+        <div class="card">
+          <h3>News & Updates</h3>
+          <p>Stay informed with the latest news, articles, and updates relevant to your interests.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <div class="details">
+        <div class="card">
+          <h3>Get in Touch</h3>
+          <p>If you have questions or feedback, please reach out to us at <a href="mailto:azin_talk.17@gmail.com">azin_talk.17@gmail.com</a>.</p>
+          <p>Follow us on social media for updates and community engagement.</p>
+          <p>Our location is in Iran, Tehran, Region 17 in Falah.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-content" style="text-align: center; padding: 20px;">
+    <p> Azin talk coming soon in 2025</p>
+    <p>
+      <a href="#home" style="color: #ecf0f1; text-decoration:underline;">Back to top</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggleButton = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('nav ul');
+
+    toggleButton.addEventListener('click', function() {
+      navMenu.classList.toggle('show');
+    });
+  });
+</script>
+
+</body>
+</html>

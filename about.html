@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="main.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Azin Talk</title>
+    <style>
+        nav {
+            margin-top: -1px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: purple; 
+            justify-content: flex-start; 
+            padding: 15px 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 9999;
+            text-align: center;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        nav ul li {
+            margin-right: 20px;
+            text-align: center;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        body {
+            padding-top: 80px; 
+            font-family: Arial, sans-serif;
+        }
+
+        @media (max-width: 768px) {
+            
+            nav {
+                justify-content: center; 
+                padding: 10px 0;
+                height: 50px;
+            }
+            nav ul {
+            
+                display: none; 
+                top: 60px; 
+                left: 0;
+                right: 0;
+                background-color: purple;
+                align-items: center;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            }
+            .hamburger {
+                display: block;
+                cursor: pointer;
+                width: 30px;
+                height: 25px;
+                position: fixed;
+                top: 10px;
+             
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 10000;
+            }
+
+            .hamburger span {
+                background-color: #333;
+                display: block;
+                height: 4px;
+                width: 100%;
+                margin: 4px 0;
+                border-radius: 2px;
+            }
+
+            nav.active ul {
+                display: flex;
+            }
+        }
+        @media (max-width: 768px) {
+
+    nav {
+        justify-content: center; 
+        padding: 10px 0;
+    }
+    nav ul {
+        flex-direction: column;
+        display: none; 
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        right: 0;
+        background-color: purple;
+        align-items: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .hamburger {
+        cursor: pointer;
+        width: 40px; 
+        height: 30px; 
+        position: fixed;
+        top: 10px;
+      
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10000;
+
+        
+        font-size: 24px; 
+    }
+
+    .hamburger span {
+        background-color: #333;
+        display: block;
+        height: 4px;
+        width: 100%;
+        margin: 6px 0; 
+        border-radius: 2px;
+    }
+
+ 
+    nav ul li a {
+        font-size: 20px; 
+        padding: 10px 20px; 
+    }
+
+
+    nav.active ul {
+        display: flex;
+    }
+}
+    </style>
+</head>
+<body>
+
+<div class="hamburger" id="hamburger" style="display:none;">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+
+<nav id="navbar">
+    <ul>
+      <li><a style="color: white;" href="index.html">Home</a></li>
+      <li><a  style="color: white;"href="about.html">About</a></li>
+      <li><a  style="color: white;"href="login.page.html">Login</a></li>
+      <li><a  style="color: white;"href="loc.html">Location</a></li>
+      <li><a style="color: white;"  href="teacher.html">Teachers</a></li>
+    </ul>
+</nav>
+
+
+<div class="container">
+
+    <section id="about" class="about">
+        <h2>About Azin Talk Complex</h2>
+        <p>
+            Azin Talk Complex is a prime destination for conversation, creativity, and community. Designed to serve as a hub for communication and entertainment, our complex offers a modern space equipped with the latest amenities. Whether you're here to socialize, host events, or relax, Azin Talk provides an inviting atmosphere for all visitors.
+        </p>
+    </section>
+
+    <section id="photos" class="images">
+        <img src="pic/IMG_20200612_124040_663.jpg" alt="Azin Talk Complex Exterior" style="width:100%;max-width:600px;margin-bottom:10px;"/>
+        <img src="pic/IMG_20200628_145353_547.jpg" alt="Azin Talk Interior" style="width:100%;max-width:600px;"/>
+    </section>
+
+    <section id="contact" class="contact-info">
+        <h2>Contact & Details</h2>
+        <div class="details-box">
+            <h3>Details</h3>
+            <p>Address: Iran, Tehran, Region17</p>
+            <p>Opening Hours: 9:00 AM - 9:00 PM</p>
+        </div>
+        <div class="details-box">
+            <h3>Phone Number</h3>
+            <p>02155761205</p>
+        </div>
+        <div class="details-box">
+            <h3>Email</h3>
+            <p>azin_talk.17@gmail.com</p>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>&copy; 2025 Azin Talk. All rights reserved.</p>
+</footer>
+
+<script>
+
+  window.addEventListener('load', () => {
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('navbar');
+    if(window.innerWidth <= 768){
+        hamburger.style.display = 'block';
+
+
+        hamburger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+    } else {
+        hamburger.style.display = 'none';
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('navbar');
+    if(window.innerWidth <= 768){
+        hamburger.style.display = 'block';
+        if(!hamburger.hasAttribute('data-initialized')){
+            hamburger.setAttribute('data-initialized', 'true');
+            hamburger.addEventListener('click', () => {
+                nav.classList.toggle('active');
+            });
+        }
+    } else {
+        hamburger.style.display = 'none';
+
+        nav.classList.remove('active');
+    }
+  });
+</script>
+
+
+</body>
+</html>
