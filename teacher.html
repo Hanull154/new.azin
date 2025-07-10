@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teachers List</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: whitesmoke;
+      margin: 0;
+      padding: 0;
+      color: #000;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    /* Navigation styles */
+    nav {
+      background-color: purple;
+      position: relative;
+    }
+    /* دکمه منو در حالت موبایل */
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #fff;
+      padding: 10px 20px;
+    }
+    /* استایل منو */
+    nav ul {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
+      padding: 10px 20px;
+      margin: 0;
+      list-style: none;
+    }
+    nav li {
+      margin: 0 10px;
+    }
+    nav a {
+      display: block;
+      color: #fff;
+      text-align: center;
+      padding: 12px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 4px;
+    }
+    nav a:hover {
+      background-color: purple;
+    }
+    
+    @media (max-width: 600px) {
+      .menu-toggle {
+        display: block;
+      }
+      nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #CC66DA;
+      }
+      nav ul.show {
+        display: flex;
+      }
+      nav li {
+        margin: 5px 0;
+      }
+    }
+    
+    @media (max-width: 600px) {
+      nav {
+        display: flex;
+        align-items: center; 
+        justify-content: center; 
+      }
+      .menu-container {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      nav ul {
+        top: 50px;
+      }
+    }
+
+    /* محتوای لیست مربیان */
+    .teacher-list {
+      max-width: 1000px;
+      width: 95%;
+      margin: 20px auto;
+    }
+
+    /* سبک مربی */
+    .teacher {
+      background-color: whitesmoke;
+      border: 2px solid #CC66DA;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    }
+    /* عنوان مربی */
+    .teacher h2 {
+      margin-top: 0;
+      color: #CC66DA;
+    }
+    /* لیست مهارت‌ها */
+    .skills {
+      list-style-type: none;
+      padding: 0;
+      margin: 8px 0;
+    }
+    .skills li {
+      display: inline-block;
+      background-color: white;
+      margin: 5px;
+      padding: 8px 12px;
+      border-radius: 20px;
+      font-weight: bold;
+    }
+    /* توضیحات مربی */
+    .description {
+      margin-top: 10px;
+      background-color: #f9f9f9;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-style: italic;
+    }
+
+    /* استایل فوتر برای چسباندن به پایین */
+    footer {
+      background-color: purple;
+      color: #fff;
+      text-align: center;
+      padding: 25px 20px; /* طولانی‌تر کردن فوتر */
+      margin-top: auto;
+      /* برای چسباندن به پایین صفحه */
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="login.page.html">Login</a></li>
+    <li><a href="loc.html">location</a></li>
+    <li><a href="teacher.html">Teachers</a></li>
+  </ul>
+</nav>
+
+<h1 style="text-align:center; padding:20px 0; color:#CC66DA; margin:0;">List of Teachers</h1>
+
+<div class="teacher-list">
+  <!-- مربیان قبلی -->
+  <div class="teacher">
+    <h2>John Doe</h2>
+    <p><strong>Last Name:</strong> Doe</p>
+    <p><strong>Experience:</strong> 10 years in Java programming</p>
+    <p><strong>Skills:</strong></p>
+    <ul class="skills">
+      <li>Java</li>
+      <li>Py</li>
+      <li>HTML</li>
+    </ul>
+    <div class="description">
+      John Doe is an experienced software engineer with over 10 years specializing in Java development. He excels at building robust applications and mentoring students in coding best practices.
+    </div>
+  </div>
+  <div class="teacher">
+    <h2>Jane Smith</h2>
+    <p><strong>Last Name:</strong> Smith</p>
+    <p><strong>Experience:</strong> 8 years in web development</p>
+    <p><strong>Skills:</strong></p>
+    <ul class="skills">
+      <li>Java</li>
+      <li>Py</li>
+      <li>HTML</li>
+    </ul>
+    <div class="description">
+      Jane Smith is a proficient web developer with 8 years of experience. She is passionate about creating interactive websites and helping students learn front-end technologies.
+    </div>
+  </div>
+
+  <!-- مربیان جدید -->
+  <div class="teacher">
+    <h2>Michael Johnson</h2>
+    <p><strong>Last Name:</strong> Johnson</p>
+    <p><strong>Experience:</strong> 12 years in Data Science</p>
+    <p><strong>Skills:</strong></p>
+    <ul class="skills">
+      <li>Python</li>
+      <li>R</li>
+      <li>SQL</li>
+    </ul>
+    <div class="description">
+      Michael Johnson is a data scientist with over 12 years of experience. He specializes in machine learning and big data analytics, and enjoys mentoring students in data analysis.
+    </div>
+  </div>
+  
+  <div class="teacher">
+    <h2>Emma Williams</h2>
+    <p><strong>Last Name:</strong> Williams</p>
+    <p><strong>Experience:</strong> 9 years in UI/UX Design</p>
+    <p><strong>Skills:</strong></p>
+    <ul class="skills">
+      <li>Figma</li>
+      <li>Adobe XD</li>
+      <li>HTML</li>
+    </ul>
+    <div class="description">
+      Emma Williams is an expert in UI/UX design with 9 years of experience, passionate about creating user-friendly interfaces and teaching design principles.
+    </div>
+  </div>
+
+</div>
+
+<!-- فوتر - چسبیده به پایین -->
+<footer>
+  &copy; 2025 Educational Site. All rights reserved.
+</footer>
+
+<script>
+  document.getElementById('menu-toggle').addEventListener('click', function() {
+    document.querySelector('nav ul').classList.toggle('show');
+  });
+</script>
+
+</body>
+</html>

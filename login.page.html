@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="main.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Azin Talk - Login</title>
+    <link rel="stylesheet" href="styles.css" />
+
+    <style>
+        /* Basic styles for navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: purple;
+            position: relative;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            margin: 0 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* Hamburger styles */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            display: block;
+            height: 3px;
+            background-color: #333;
+            border-radius: 2px;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            nav {
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: purple; /* تغییر به آبی */
+                flex-direction: column;
+                width: 200px;
+                display: none;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+                padding: 10px 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav li {
+                margin: 10px 0;
+            }
+
+            /* Show menu when active */
+            nav.show {
+                display: flex;
+            }
+
+            /* Show hamburger menu */
+            .menu-toggle {
+                display: flex;
+            }
+        }
+
+        /* Adjust font size and spacing on smaller screens */
+        main {
+            padding: 20px;
+        }
+
+        /* Center headers */
+        h2 {
+            text-align: center;
+        }
+
+        /* Style for the form labels and inputs */
+        .login-form {
+            max-width: 400px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-form label {
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .login-form input {
+            padding: 8px;
+            font-size: 1em;
+        }
+
+        .login-form button {
+            margin-top: 15px;
+            padding: 10px;
+            font-size: 1em;
+            background-color: #CC66DA;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Footer styles */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #CC66DA;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Azin Talk</h1>
+    <!-- Hamburger icon for mobile -->
+    <div class="menu-toggle" id="menu-toggle" aria-label="Toggle Menu" aria-expanded="false" role="button" tabindex="0">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <nav id="nav-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="login.page.html">Login</a></li>
+            <li><a href="loc.html">Location</a></li>
+            <li><a href="teacher.html">Teachers</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="section" id="login-section">
+        <h2 style="color:#CC66DA;">Login to Azin Talk</h2>
+        <form class="login-form">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter username" required />
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter password" required />
+
+            <label for="number">Number</label>
+            <input type="number" id="number" name="Number" placeholder="Enter Number" required />
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <div class="section" id="how-to-use">
+        <h2 style="color:#CC66DA;">How to Use Azin Talk</h2>
+        <div class="how-to">
+            <p>
+                Azin Talk is a social platform designed for chatting, sharing ideas, and making friends worldwide. To get started:
+            </p>
+            <ul>
+                <li><strong>Create an account:</strong> Sign up with email and set a password.</li>
+                <li><strong>Log in:</strong> Use your credentials to access your profile.</li>
+                <li><strong>Explore and chat:</strong> Join conversations, share content, and connect with others.</li>
+                <li><strong>Stay safe:</strong> Respect community rules and report issues if needed.</li>
+            </ul>
+            <p>Enjoy connecting and communicating on Azin Talk!</p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2025 Azin Talk. All rights reserved.</p>
+    <p>
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Contact Us</a>
+    </p>
+</footer>
+
+<!-- JavaScript for toggling menu -->
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+        navMenu.classList.toggle('show');
+        const expanded = navMenu.classList.contains('show');
+        menuToggle.setAttribute('aria-expanded', expanded);
+    });
+
+    // Accessibility: toggle menu on Enter or Space keys
+    menuToggle.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            menuToggle.click();
+        }
+    });
+</script>
+</body>
+</html>
