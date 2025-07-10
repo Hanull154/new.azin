@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="main.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Our Location</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f5f9ff;
+    color: #333;
+  }
+
+  header {
+    background-color: purple; 
+    padding: 15px 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  nav a:hover {
+    background-color: purple;
+  }
+
+
+  .menu-toggle {
+    display: none; 
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+  }
+
+
+  .menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  @media(max-width: 600px) {
+    header {
+      padding: 10px 15px;
+    }
+
+    .menu-toggle {
+      display: flex;
+    }
+
+
+    nav ul {
+      position: absolute;
+      top: 55px;
+      right: 20px;
+      background-color: purple;
+      flex-direction: column;
+      width: 200px;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+    }
+    nav ul.show {
+      max-height: 500px; 
+      opacity: 1;
+    }
+  }
+
+  .location-section {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #eef6fd;
+  }
+
+  .location-section h1 {
+    margin-bottom: 20px;
+    color: #003366;
+    font-size: 2em;
+  }
+
+  .map-placeholder {
+    width: 100%;
+    max-width: 700px;
+    height: 300px;
+    margin: 0 auto 20px;
+    background-color: #e0e0e0; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3em;
+    color: #555;
+    border-radius: 8px;
+    transition: background 0.3s;
+  }
+
+  footer {
+    background-color: purple; 
+    padding: 30px 20px;
+    color: white;
+  }
+
+  .footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .footer-column {
+    flex: 1 1 250px;
+    margin: 10px;
+  }
+
+  .footer-column h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+  }
+
+  .social-icons a {
+    margin-right: 12px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em; 
+    padding: 8px;
+    border-radius: 50%;
+    transition: background 0.3s, transform 0.2s;
+    display: inline-block;
+  }
+  .social-icons a:hover {
+    background-color: rgba(255,255,255,0.2);
+    transform: scale(1.2);
+  }
+  @media(max-width: 600px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="menu-toggle" id="menu-toggle" aria-label="Menu" role="button" tabindex="0">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <nav>
+    <ul id="menu-items">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="login.page.html">Login</a></li>
+      <li><a href="loc.html">Location</a></li>
+      <li><a href="teacher.html">Teachers</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="location" class="location-section">
+  <h1>Our Location</h1>
+  <div class="map-placeholder">
+    Map Placeholder (Insert Google Map here)
+  </div>
+  <p>Iran, Tehran, Region 17</p>
+  <p>Open: Mon-Sat, 9am - 6pm</p>
+  <p>Phone: 021-55761205</p>
+</section>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>Contact Us</h3>
+      <p>Address: Iran, Tehran, Region 17</p>
+      <p>Email: azin_talk.17@gmail.com</p>
+      <p>Phone: 02155761205</p>
+    </div>
+    <div class="footer-column">
+      <h3>Follow Us</h3>
+      <div class="social-icons" style="text-align: center;">
+        <a href="#" aria-label="Facebook" title="Facebook">🌐</a>
+        <a href="#" aria-label="Twitter" title="Twitter">🐦</a>
+        <a href="#" aria-label="Instagram" title="Instagram">📸</a>
+        <a href="#" aria-label="LinkedIn" title="LinkedIn">💼</a>
+      </div>
+    </div>
+    <div class="footer-column">
+      <h3>About</h3>
+      <p>&copy; 2025 Your Company Name. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const menuItems = document.getElementById('menu-items');
+
+  menuToggle.addEventListener('click', () => {
+    menuItems.classList.toggle('show');
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!menuToggle.contains(event.target) && !menuItems.contains(event.target)) {
+      menuItems.classList.remove('show');
+    }
+  });
+</script>
+
+</body>
+</html>
